@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: 000;
+    background-color: #000;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -96,7 +96,7 @@ header .nav-primary li a {
     max-width: 100%;
 }
 
-/*
+
 @keyframes pisca {
     from {
         opacity: 1;
@@ -119,7 +119,7 @@ header .nav-primary li a {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
-} */
+}
 
 
 
@@ -281,16 +281,18 @@ main .sobre{
     }
 
 
-    header .navegacao-primaria{
+    header .nav-primary{
         display: none;
     }
 
-    .header i{
+    header i{
         color: #f7f7f7;
         font-size: 3rem;
     }
 
+}
 
+    @media(max-width: 992px) {  
     .sobre img {
         grid-column: 1/-1;
         justify-self: center;
@@ -298,5 +300,100 @@ main .sobre{
 
     .sobre_conteudo{
         grid-column: 1/-1;
-    }
+        }
 }
+
+
+/* SERVICES */
+
+    .services{
+        margin-top: -30px;
+        padding: 60px;
+        background-color: #151515;
+    }
+
+    .my-services{
+        padding: 60px;
+        color: white;
+    }
+
+    .my-services ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .my-services ul li{
+        cursor: pointer;
+        border-radius: 6px;
+        position: relative;
+        padding: 10px;
+        display: grid;
+        gap: 30px;
+        text-align: center;
+        max-width: 300px;
+        align-content: center;
+        height: 300px;
+        background-color: #222;
+    }
+
+    .my-services ul li i{
+        font-size: 2.7rem;
+        color: #dc3545;
+    }
+
+    .my-services ul li h3{
+        color: #fff;
+        font-size: 1.6rem;
+        font-family: 'poppins';
+        font-weight: 500;
+    }
+
+    .my-services ul li p{
+        color: #707070;
+        font-size: 1.1rem;
+    }
+
+    .my-services li::before {
+        content: '';
+        transition: .5s ease-in-out;
+        border-radius: 6px;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        border-top: 2px solid transparent;
+        border-right: 2px solid transparent;
+    }
+
+    .my-services li::after {
+        content: '';
+        transition: .5s ease-in-out;
+        border-radius: 6px;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        bottom: -2px;
+        left: -2px;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid transparent;
+    }
+
+    .my-services li:hover::before{
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid red;
+        border-right: 2px solid red;
+
+    }
+
+    .my-services li:hover::after{
+        width: 100%;
+        height: 100%;
+        border-bottom: 2px solid red;
+        border-left: 2px solid red;
+
+    }
